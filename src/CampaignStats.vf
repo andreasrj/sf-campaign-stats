@@ -1,0 +1,12 @@
+<apex:page controller="EmailStats">
+   <apex:chart data="{!BarStackData}" height="280" width="500">
+       <apex:legend position="left"/>
+       <apex:axis type="Numeric" position="left" steps="1.0" title="Open rates" grid="true" fields="opened,notOpened" dashSize="2">
+           <apex:chartLabel />
+       </apex:axis>
+       <apex:axis type="Category" position="bottom" fields="names">
+           <apex:chartLabel rotate="315"/>
+       </apex:axis>
+       <apex:barSeries orientation="vertical" axis="left" stacked="true" xField="names" yField="opened,notOpened" title="Opened,Not Opened" />
+   </apex:chart>        
+</apex:page>
